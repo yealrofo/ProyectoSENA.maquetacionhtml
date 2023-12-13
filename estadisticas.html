@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Yarotec - Estadísticas</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #aed8e6; 
+        }
+
+        .nav-container {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            display: flex;
+            align-items: center;
+        }
+
+        .nav-links a {
+            margin-left: 20px;
+            text-decoration: none;
+            color: #333;
+            font-weight: bold;
+        }
+
+        .category-section {
+            margin-top: 30px;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .category-title {
+            font-size: 20px;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .product-list {
+            margin-top: 20px;
+        }
+
+        .product {
+            margin-bottom: 20px;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            text-align: center;
+            background-color: #f9f9f9;
+        }
+
+        .warning {
+            color: red;
+            font-size: 18px;
+        }
+
+        
+        .nav-buttons {
+            display: flex;
+            justify-content: space-around;
+            margin-top: 20px;
+            border: 2px solid #333;
+            border-radius: 5px;
+            padding: 10px;
+            background-color: #aed8e6; 
+
+        .nav-buttons a {
+            text-decoration: none;
+            color: #333;
+            font-weight: bold;
+            padding: 5px 15px;
+            border-radius: 5px;
+        }
+
+        .nav-buttons a:hover {
+            background-color: #333;
+            color: #fff;
+        }
+    </style>
+</head>
+<body>
+   
+
+    <!-- Botones de navegación -->
+    <div class="nav-buttons">
+        <a href="index.html">Inicio</a>
+        <a href="alertas.html">Alertas</a>
+        <a href="consulta.html">Consulta</a>
+        <a href="edicion.html">Edición</a>
+    </div>
+
+    
+
+    <div class="category-section">
+        <div class="category-title">Procesadores</div>
+        <div class="product-list">
+            <!-- Producto 1 -->
+            <div class="product">
+                <p>Nombre: Procesador 1</p>
+                <p>Precio de Seguimiento: $200</p>
+                <p>Precio Más Bajo: $180</p>
+                <p>Precio Más Alto: $220</p>
+                <p>Precio Actual: $200</p>
+                <!-- Coloca en rojo con símbolo de advertencia si el precio actual es menor o igual que el valor objetivo -->
+                <p class="warning">&#9888; Precio de Alerta Alcanzado</p>
+            </div>
+            <!-- Producto 2 -->
+            <div class="product">
+                <p>Nombre: Procesador 2</p>
+                <p>Precio de Seguimiento: $180</p>
+                <p>Precio Más Bajo: $160</p>
+                <p>Precio Más Alto: $200</p>
+                <p>Precio Actual: $190</p>
+                <!-- Deja en negro si el precio actual es mayor que el valor objetivo -->
+                <p class="warning"></p>
+            </div>
+           
+        </div>
+    </div>
+
+    <div class="category-section">
+        <div class="category-title">Memorias</div>
+        <div class="product-list">
+            <!-- Producto 1 -->
+            <div class="product">
+                <p>Nombre: Memoria 1</p>
+                <p>Precio de Seguimiento: $80</p>
+                <p>Precio Más Bajo: $70</p>
+                <p>Precio Más Alto: $90</p>
+                <p>Precio Actual: $85</p>
+                <!-- Coloca en rojo con símbolo de advertencia si el precio actual es menor o igual que el valor objetivo -->
+                <p class="warning">&#9888; Precio de Alerta Alcanzado</p>
+            </div>
+            <!-- Producto 2 -->
+            <div class="product">
+                <p>Nombre: Memoria 2</p>
+                <p>Precio de Seguimiento: $70</p>
+                <p>Precio Más Bajo: $60</p>
+                <p>Precio Más Alto: $80</p>
+                <p>Precio Actual: $75</p>
+                <!-- Deja en negro si el precio actual es mayor que el valor objetivo -->
+                <p class="warning"></p>
+            </div>
+           
+        </div>
+    </div>
+
+   
+
+</body>
+</html>

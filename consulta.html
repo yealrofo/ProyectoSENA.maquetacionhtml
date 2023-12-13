@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Yarotec - Consulta</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #aed8e6; /* Azul Celeste */
+        }
+
+        
+        .nav-container {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            display: flex;
+            align-items: center;
+        }
+
+        .nav-links a {
+            margin-left: 20px;
+            text-decoration: none;
+            color: #333;
+            font-weight: bold;
+        }
+
+        .category-section {
+            margin-top: 30px;
+            background-color: #fff; /* Fondo blanco para destacar categorías */
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Sombra suave */
+        }
+
+        .category-title {
+            font-size: 20px;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .product-list {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            margin-top: 20px;
+        }
+
+        .product {
+            width: 40%;
+            margin-bottom: 20px;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            text-align: center;
+            background-color: #f9f9f9; /* Fondo gris claro para productos */
+        }
+
+        img.category-image {
+            max-width: 100px; /* Ajusta el tamaño de la imagen */
+            height: auto;
+            margin-bottom: 10px;
+        }
+
+        /* Estilos de los botones de navegación */
+        .nav-buttons {
+            display: flex;
+            justify-content: space-around;
+            margin-top: 20px;
+            border: 2px solid #333;
+            border-radius: 5px;
+            padding: 10px;
+            background-color: #aed8e6; /* Azul Celeste */
+        }
+
+        .nav-buttons a {
+            text-decoration: none;
+            color: #333;
+            font-weight: bold;
+            padding: 5px 15px;
+            border-radius: 5px;
+        }
+
+        .nav-buttons a:hover {
+            background-color: #333;
+            color: #fff;
+        }
+    </style>
+</head>
+<body>
+        <!-- Botones de navegación -->
+    <div class="nav-buttons">
+        <a href="index.html">Inicio</a>
+        <a href="alertas.html">Alertas</a>
+        <a href="edicion.html">Edición</a>
+        <a href="estadisticas.html">Estadísticas</a>
+    </div>
+
+    <!-- Contenido específico de consulta.html -->
+
+    <div class="category-section">
+        <div class="category-title">Procesadores</div>
+        <img src="procesador1.jpg" alt="Categoría Procesadores" class="category-image">
+        <div class="product-list">
+            <!-- Producto 1 -->
+            <div class="product">
+                <p>Producto 1</p>
+                <p>Precio Actual: $150</p>
+                <p>% de Variación: -10%</p>
+            </div>
+            <!-- Producto 2 -->
+            <div class="product">
+                <p>Producto 2</p>
+                <p>Precio Actual: $180</p>
+                <p>% de Variación: +5%</p>
+            </div>
+            <!-- Agrega más productos según sea necesario -->
+        </div>
+    </div>
+
+    <div class="category-section">
+        <div class="category-title">Memorias</div>
+        <img src="SSD1.jpg" alt="Categoría Memorias" class="category-image">
+        <div class="product-list">
+            <!-- Producto 1 -->
+            <div class="product">
+                <p>Producto 1</p>
+                <p>Precio Actual: $60</p>

@@ -1,0 +1,58 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #aed8e6; /* Azul Celeste */
+}
+
+.container {
+    max-width: 600px;
+    margin: 100px auto;
+    background-color: #aed8e6; /* Azul Celeste */
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+}
+
+.logo {
+    max-width: 100%;
+    height: auto;
+}
+
+.buttons-container {
+    margin-top: 20px;
+}
+
+button {
+    padding: 10px 20px;
+    margin: 0 10px;
+    font-size: 16px;
+    cursor: pointer;
+    border: none;
+    border-radius: 5px;
+}
+
+button:hover {
+    background-color: #c1b3e1; /* Verde Lila */
+}
+.user-info {
+    margin-top: 20px;
+}
+
+.user-info p {
+    margin: 5px 0;
+}
+
+#alertasPromocion {
+    color: #ffcc80; /* Naranja Claro */
+    cursor: pointer;
+}
+
+#alertasPromocion:hover {
+    text-decoration: underline;
+}
+button img {
+    max-width: 50px; 
+    max-height: 50px; 
+    margin-right: 5px; /* Ajusta este valor para añadir espacio entre el texto y la imagen */
+}
