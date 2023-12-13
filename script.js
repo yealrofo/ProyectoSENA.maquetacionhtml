@@ -1,10 +1,10 @@
 function showLogin() {
-    // Implementar lógica para mostrar la página de ingreso de usuario
+    
     alert("Mostrar página de ingreso de usuario");
 }
 
 function showRegistro() {
-    // Implementar lógica para mostrar la página de registro de nuevo usuario
+    
     alert("Mostrar página de registro de nuevo usuario");
 }
 

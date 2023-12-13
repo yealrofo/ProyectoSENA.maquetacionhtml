@@ -10,20 +10,20 @@
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
-            background-color: #aed8e6; /* Azul Celeste */
+            background-color: #aed8e6; 
         }
 
         .container {
             max-width: 800px;
             margin: 100px auto;
-            background-color: #aed8e6; /* Azul Celeste */
+            background-color: #aed8e6;
             padding: 20px;
             border-radius: 10px;
             text-align: center;
             display: flex;
             flex-wrap: wrap;
             justify-content: center;
-            align-items: flex-start; /* Alinea los elementos en la parte superior del contenedor */
+            align-items: flex-start; 
         }
 
         .logo {
@@ -56,7 +56,7 @@
             flex: 1;
             padding: 10px;
             margin: 5px;
-            font-size: 14px; /* Ajusta el tamaño de fuente según tus necesidades */
+            font-size: 14px; 
             cursor: pointer;
             border: 2px solid #333;
             border-radius: 5px;
@@ -75,21 +75,20 @@
         }
 
         .product-image {
-            max-width: 200px; /* Ajusta el tamaño según tus necesidades */
+            max-width: 200px; 
             height: auto;
             margin-left: 20px;
-            border: 2px solid #333; /* Añadido reborde */
+            border: 2px solid #333; 
             border-radius: 5px;
         }
 
-        /* Estilos del pie de página */
         .footer {
             margin-top: 30px;
             text-align: center;
         }
 
         .footer-logo {
-            max-width: 50px; /* Ajusta el tamaño según tus necesidades */
+            max-width: 50px; 
             height: auto;
         }
     </style>
@@ -105,7 +104,6 @@
                 <p>Número de Productos en Promoción Vigentes: <span id="numPromocion">5</span></p>
             </div>
 
-            <!-- Botón de Alertas (antes "Alertas de Productos en Promoción no Revisados") -->
             <div class="alert-button">
                 <a href="alertas.html">
                     <button style="background-color: #ffcc80;">Alerta de Productos</button>
@@ -132,7 +130,7 @@
         </div>
     </div>
 
-    <!-- Pie de página -->
+ 
     <div class="footer">
         <img src="Imagen1.png" alt="Yarotec Logo" class="footer-logo">
         <p>Derechos Reservados &copy; <span id="currentYear"></span></p>
@@ -140,7 +138,7 @@
 
     <script src="script.js"></script>
     <script>
-        // Obtener y mostrar el año actual en el pie de página
+        // mostrar el año actual en el pie de página
         document.getElementById('currentYear').innerText = new Date().getFullYear();
     </script>
 </body>

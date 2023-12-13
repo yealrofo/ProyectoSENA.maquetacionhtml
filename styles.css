@@ -2,13 +2,13 @@ body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #aed8e6; /* Azul Celeste */
+    background-color: #aed8e6; 
 }
 
 .container {
     max-width: 600px;
     margin: 100px auto;
-    background-color: #aed8e6; /* Azul Celeste */
+    background-color: #aed8e6; 
     padding: 20px;
     border-radius: 10px;
     text-align: center;
@@ -33,7 +33,7 @@ button {
 }
 
 button:hover {
-    background-color: #c1b3e1; /* Verde Lila */
+    background-color: #c1b3e1; 
 }
 .user-info {
     margin-top: 20px;
@@ -44,7 +44,7 @@ button:hover {
 }
 
 #alertasPromocion {
-    color: #ffcc80; /* Naranja Claro */
+    color: #ffcc80; 
     cursor: pointer;
 }
 
@@ -54,5 +54,5 @@ button:hover {
 button img {
     max-width: 50px; 
     max-height: 50px; 
-    margin-right: 5px; /* Ajusta este valor para añadir espacio entre el texto y la imagen */
+    margin-right: 5px; 
 }
