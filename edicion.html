@@ -10,10 +10,9 @@
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
-            background-color: #aed8e6; 
+            background-color: #aed8e6; /* Azul Celeste */
         }
 
-        
         .nav-container {
             position: absolute;
             top: 20px;
@@ -31,10 +30,10 @@
 
         .category-section {
             margin-top: 30px;
-            background-color: #fff; 
+            background-color: #fff; /* Fondo blanco para destacar categorías */
             padding: 20px;
             border-radius: 10px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); 
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Sombra suave */
         }
 
         .category-title {
@@ -45,19 +44,23 @@
 
         .product-list {
             margin-top: 20px;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
         }
 
         .product {
+            width: calc(40% - 20px); /* Utilizando calc para ajustar el ancho y agregar margen entre productos */
             margin-bottom: 20px;
             padding: 10px;
             border: 1px solid #ccc;
             border-radius: 5px;
             text-align: center;
-            background-color: #f9f9f9; 
+            background-color: #f9f9f9; /* Fondo gris claro para productos */
         }
 
         .product img {
-            max-width: 100px; 
+            max-width: 100%; /* Asegurando que las imágenes sean responsivas */
             height: auto;
             margin-bottom: 10px;
         }
@@ -66,7 +69,7 @@
             padding: 5px 10px;
             margin-top: 10px;
             cursor: pointer;
-            background-color: #c1b3e1; 
+            background-color: #c1b3e1; /* Fondo violeta claro */
             border: 1px solid #333;
             border-radius: 5px;
             color: #333;
@@ -78,7 +81,6 @@
             color: #fff;
         }
 
-        
         .nav-buttons {
             display: flex;
             justify-content: space-around;
@@ -86,7 +88,7 @@
             border: 2px solid #333;
             border-radius: 5px;
             padding: 10px;
-            background-color: #aed8e6; 
+            background-color: #aed8e6; /* Azul Celeste */
         }
 
         .nav-buttons a {
@@ -95,18 +97,36 @@
             font-weight: bold;
             padding: 5px 15px;
             border-radius: 5px;
+            margin: 5px; /* Espacio entre los botones */
         }
 
         .nav-buttons a:hover {
             background-color: #333;
             color: #fff;
         }
+
+        /* Media query para dispositivos más pequeños */
+        @media screen and (max-width: 768px) {
+            .product {
+                width: calc(50% - 20px); /* En pantallas más pequeñas, muestra dos productos por fila */
+            }
+
+            .nav-buttons {
+                flex-direction: column; /* Cambia la dirección de la flexbox a columna para pantallas pequeñas */
+                align-items: center; /* Centra los botones verticalmente */
+            }
+        }
+
+        @media screen and (max-width: 480px) {
+            .product {
+                width: calc(100% - 20px); /* En pantallas aún más pequeñas, muestra un producto por fila */
+            }
+        }
     </style>
 </head>
 <body>
 
-
-    
+    <!-- Botones de navegación -->
     <div class="nav-buttons">
         <a href="index.html">Inicio</a>
         <a href="alertas.html">Alertas</a>
@@ -114,7 +134,7 @@
         <a href="estadisticas.html">Estadísticas</a>
     </div>
 
-    
+    <!-- Contenido específico de edicion.html -->
 
     <div class="category-section">
         <div class="category-title">Procesadores</div>
@@ -135,7 +155,7 @@
                 <p>Variación: +5%</p>
                 <a href="#" class="edit-button">Editar</a>
             </div>
-            <!-- se agregaran más productos  -->
+            <!-- Agrega más productos según sea necesario -->
         </div>
     </div>
 
@@ -158,11 +178,7 @@
                 <p>Variación: +10%</p>
                 <a href="#" class="edit-button">Editar</a>
             </div>
-            
         </div>
     </div>
-
-
-
 </body>
 </html>

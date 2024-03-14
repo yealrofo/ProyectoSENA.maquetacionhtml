@@ -3,7 +3,6 @@
 <head>
     <meta charset="UTF-8"> 
     <style>
-    
         body {
             font-family: Arial, sans-serif;
             margin: 0;
@@ -44,30 +43,30 @@
         }
 
         .product {
-            width: 30%;
+            width: calc(30% - 20px); /* Utilizando calc para ajustar el ancho y agregar margen entre productos */
             margin-bottom: 20px;
             padding: 10px;
             border: 1px solid #ccc;
             border-radius: 5px;
             text-align: center;
-            background-color: #fff; 
+            background-color: #fff;
         }
 
         .product img {
-            max-width: 50%; 
+            max-width: 100%; /* Asegurando que las imágenes sean responsivas */
             height: auto;
             margin-bottom: 10px;
         }
 
-        
         .nav-buttons {
             display: flex;
-            justify-content: space-around;
+            justify-content: center; /* Centra los botones de navegación */
+            flex-wrap: wrap; /* Permite que los elementos se envuelvan en pantallas pequeñas */
             margin-top: 20px;
             border: 2px solid #333;
             border-radius: 5px;
             padding: 10px;
-            background-color: #aed8e6; 
+            background-color: #aed8e6;
         }
 
         .nav-buttons a {
@@ -76,6 +75,8 @@
             font-weight: bold;
             padding: 5px 15px;
             border-radius: 5px;
+            margin: 5px; /* Espacio entre los botones */
+            display: block; /* Hace que los botones se muestren en línea verticalmente */
         }
 
         .nav-buttons a:hover {
@@ -83,6 +84,22 @@
             color: #fff;
         }
 
+        @media screen and (max-width: 768px) {
+            .product {
+                width: calc(50% - 20px); /* En pantallas más pequeñas, muestra dos productos por fila */
+            }
+        }
+
+        @media screen and (max-width: 480px) {
+            .product {
+                width: calc(100% - 20px); /* En pantallas aún más pequeñas, muestra un producto por fila */
+            }
+
+            .nav-buttons {
+                flex-direction: column; /* Cambia la dirección de la flexbox a columna para pantallas pequeñas */
+                align-items: center; /* Centra los botones verticalmente */
+            }
+        }
     </style>
 </head>
 <body>
@@ -94,8 +111,6 @@
         <a href="edicion.html">Edición</a>
         <a href="estadisticas.html">Estadísticas</a>
     </div>
-
- 
 
     <div class="category-section">
         <div class="category-title">Procesadores</div>
@@ -112,7 +127,6 @@
                 <p>Precio: $250</p>
                 <p>Descuento: 15%</p>
             </div>
-         
         </div>
     </div>
 
@@ -131,10 +145,8 @@
                 <p>Precio: $120</p>
                 <p>Descuento: 18%</p>
             </div>
-          
         </div>
     </div>
 
-   
 </body>
 </html>

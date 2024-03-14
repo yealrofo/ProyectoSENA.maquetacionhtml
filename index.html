@@ -91,6 +91,14 @@
             max-width: 50px; 
             height: auto;
         }
+
+        /* Media query para dispositivos más pequeños */
+        @media screen and (max-width: 768px) {
+            .nav-links {
+                flex-direction: column; /* Cambia la dirección de la flexbox a columna para dispositivos pequeños */
+                align-items: center; /* Centra los botones verticalmente */
+            }
+        }
     </style>
 </head>
 <body>

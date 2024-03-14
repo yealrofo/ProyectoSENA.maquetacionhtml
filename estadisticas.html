@@ -60,7 +60,7 @@
             font-size: 18px;
         }
 
-                .nav-buttons {
+        .nav-buttons {
             display: flex;
             justify-content: space-around;
             margin-top: 20px;
@@ -68,7 +68,7 @@
             border-radius: 5px;
             padding: 10px;
             background-color: #aed8e6; 
-                }
+        }
 
         .nav-buttons a {
             text-decoration: none;
@@ -76,26 +76,32 @@
             font-weight: bold;
             padding: 5px 15px;
             border-radius: 5px;
+            margin: 5px; /* Espacio entre los botones */
         }
 
         .nav-buttons a:hover {
             background-color: #333;
             color: #fff;
         }
+
+        /* Media query para dispositivos más pequeños */
+        @media screen and (max-width: 768px) {
+            .nav-buttons {
+                flex-direction: column; /* Cambia la dirección de la flexbox a columna para dispositivos pequeños */
+                align-items: center; /* Centra los botones verticalmente */
+            }
+        }
     </style>
 </head>
 <body>
    
-
-    
+    <!-- Botones de navegación -->
     <div class="nav-buttons">
         <a href="index.html">Inicio</a>
         <a href="alertas.html">Alertas</a>
         <a href="consulta.html">Consulta</a>
         <a href="edicion.html">Edición</a>
     </div>
-
-    
 
     <div class="category-section">
         <div class="category-title">Procesadores</div>
@@ -120,7 +126,6 @@
                 <!-- Deja en negro si el precio actual es mayor que el valor objetivo -->
                 <p class="warning"></p>
             </div>
-           
         </div>
     </div>
 
@@ -141,17 +146,4 @@
             <div class="product">
                 <p>Nombre: Memoria 2</p>
                 <p>Precio de Seguimiento: $70</p>
-                <p>Precio Más Bajo: $60</p>
-                <p>Precio Más Alto: $80</p>
-                <p>Precio Actual: $75</p>
-                <!-- Deja en negro si el precio actual es mayor que el valor objetivo -->
-                <p class="warning"></p>
-            </div>
            
-        </div>
-    </div>
-
-   
-
-</body>
-</html>

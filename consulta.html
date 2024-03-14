@@ -13,7 +13,6 @@
             background-color: #aed8e6; /* Azul Celeste */
         }
 
-        
         .nav-container {
             position: absolute;
             top: 20px;
@@ -51,7 +50,7 @@
         }
 
         .product {
-            width: 40%;
+            width: calc(40% - 20px); /* Utilizando calc para ajustar el ancho y agregar margen entre productos */
             margin-bottom: 20px;
             padding: 10px;
             border: 1px solid #ccc;
@@ -61,7 +60,7 @@
         }
 
         img.category-image {
-            max-width: 100px; /* Ajusta el tamaño de la imagen */
+            max-width: 100%; /* Asegurando que las imágenes sean responsivas */
             height: auto;
             margin-bottom: 10px;
         }
@@ -83,16 +82,36 @@
             font-weight: bold;
             padding: 5px 15px;
             border-radius: 5px;
+            margin: 5px; /* Espacio entre los botones */
         }
 
         .nav-buttons a:hover {
             background-color: #333;
             color: #fff;
         }
+
+        /* Media query para dispositivos más pequeños */
+        @media screen and (max-width: 768px) {
+            .nav-buttons {
+                flex-direction: column; /* Cambia la dirección de la flexbox a columna para pantallas pequeñas */
+                align-items: center; /* Centra los botones verticalmente */
+            }
+
+            .nav-buttons a {
+                margin: 5px 0; /* Espacio entre los botones en la dirección vertical */
+            }
+        }
+
+        @media screen and (max-width: 480px) {
+            .product {
+                width: calc(100% - 20px); /* En pantallas aún más pequeñas, muestra un producto por fila */
+            }
+        }
     </style>
 </head>
 <body>
-        <!-- Botones de navegación -->
+
+    <!-- Botones de navegación -->
     <div class="nav-buttons">
         <a href="index.html">Inicio</a>
         <a href="alertas.html">Alertas</a>
@@ -123,10 +142,6 @@
     </div>
 
     <div class="category-section">
-        <div class="category-title">Memorias</div>
-        <img src="SSD1.jpg" alt="Categoría Memorias" class="category-image">
-        <div class="product-list">
-            <!-- Producto 1 -->
-            <div class="product">
-                <p>Producto 1</p>
-                <p>Precio Actual: $60</p>
+        <div
+</body>
+</html>
