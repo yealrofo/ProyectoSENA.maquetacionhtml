@@ -16,10 +16,11 @@
         .container {
             max-width: 800px;
             margin: 100px auto;
-            background-color: #aed8e6;
+            background-color: #ffffff;
             padding: 20px;
             border-radius: 10px;
             text-align: center;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
             display: flex;
             flex-wrap: wrap;
             justify-content: center;
@@ -138,7 +139,6 @@
         </div>
     </div>
 
- 
     <div class="footer">
         <img src="Imagen1.png" alt="Yarotec Logo" class="footer-logo">
         <p>Derechos Reservados &copy; <span id="currentYear"></span></p>
@@ -146,8 +146,22 @@
 
     <script src="script.js"></script>
     <script>
-        // mostrar el año actual en el pie de página
+        // Mostrar el año actual en el pie de página
         document.getElementById('currentYear').innerText = new Date().getFullYear();
+
+        // Actualizar la fecha y hora cada segundo
+        function updateDateTime() {
+            const now = new Date();
+            const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric', hour: '2-digit', minute: '2-digit', second: '2-digit' };
+            const formattedDate = now.toLocaleDateString('es-ES', options);
+            document.getElementById('dateTime').innerText = formattedDate;
+        }
+
+        setInterval(updateDateTime, 1000);
+
+        // Obtener el nombre del usuario activo (este debería ser proporcionado por el servidor)
+        const userName = "NombreUsuario"; // Reemplazar con el nombre de usuario real
+        document.getElementById('activeUser').innerText = userName;
     </script>
 </body>
 </html>
