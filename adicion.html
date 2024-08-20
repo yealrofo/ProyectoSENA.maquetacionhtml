@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Consulta de Productos - Yarotec</title>
+    <title>Adición de Productos - Yarotec</title>
     <link rel="stylesheet" href="styles.css"> <!-- Enlaza los estilos CSS -->
 </head>
 <body>
@@ -12,21 +12,25 @@
         <!-- Logo de Yarotec -->
         <img src="Imagen1.png" alt="Yarotec Logo" class="logo">
 
-        <!-- Encabezado -->
-        <h2>Consulta de Productos</h2>
-
-        <!-- Lista de categorías y productos -->
-        <div id="productosContainer">
-            <!-- Aquí se insertará dinámicamente el contenido -->
-        </div>
+        <!-- Formulario de adición de productos -->
+        <form id="addProductForm">
+            <h2>Adición de Producto</h2>
+            <input type="text" id="nombre" placeholder="Nombre del Producto" required>
+            <input type="text" id="categoria" placeholder="Categoría" required>
+            <input type="text" id="subcategoria" placeholder="Subcategoría" required>
+            <input type="url" id="url" placeholder="URL del Producto en Amazon" required>
+            <input type="number" id="precioActual" placeholder="Precio Actual" required>
+            <input type="number" id="precioIdeal" placeholder="Precio Ideal" required>
+            <button type="submit">Agregar Producto</button>
+        </form>
 
         <!-- Enlaces de navegación -->
         <div class="nav-links">
             <a href="index.html">
                 <button>Inicio</button>
             </a>
-            <a href="adicion.html">
-                <button>Adición de Productos</button>
+            <a href="consulta.html">
+                <button>Consulta de Productos</button>
             </a>
             <a href="promociones.html">
                 <button>Productos en Promoción</button>
@@ -40,8 +44,8 @@
         <p>Derechos Reservados &copy; <span id="currentYear"></span></p>
     </div>
 
-    <!-- Script para manipular el DOM y cargar datos -->
-    <script src="consulta.js"></script>
+    <!-- Script para manejar la adición de productos -->
+    <script src="adicion.js"></script>
     <script>
         // Mostrar el año actual en el pie de página
         document.getElementById('currentYear').innerText = new Date().getFullYear();

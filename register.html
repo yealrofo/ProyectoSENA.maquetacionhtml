@@ -24,6 +24,14 @@
             ¿Ya tienes una cuenta? <a href="login.html">Inicia sesión aquí</a>
         </div>
     </div>
+    <div class="footer">
+        <img src="Imagen1.png" alt="Logo de Yarotec" class="footer-logo">
+        <p>Derechos Reservados &copy; <span id="currentYear"></span></p>
+    </div>
     <script src="register.js"></script>
+    <script>
+        // Mostrar el año actual en el pie de página
+        document.getElementById('currentYear').innerText = new Date().getFullYear();
+    </script>
 </body>
 </html>

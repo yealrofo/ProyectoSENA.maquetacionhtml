@@ -3,165 +3,53 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Panel de Usuario - Yarotec</title>
     <link rel="stylesheet" href="styles.css">
-    <title>Yarotec - Página Inicial</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #aed8e6; 
-        }
-
-        .container {
-            max-width: 800px;
-            margin: 100px auto;
-            background-color: #ffffff;
-            padding: 20px;
-            border-radius: 10px;
-            text-align: center;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            align-items: flex-start; 
-        }
-
-        .logo {
-            max-width: 100%;
-            height: auto;
-        }
-
-        .user-info {
-            width: 100%;
-            margin-top: 20px;
-        }
-
-        .user-info p {
-            margin: 5px 0;
-        }
-
-        .alert-button {
-            width: 100%;
-            margin-top: 20px;
-        }
-
-        .nav-links {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            width: 100%;
-        }
-
-        button {
-            flex: 1;
-            padding: 10px;
-            margin: 5px;
-            font-size: 14px; 
-            cursor: pointer;
-            border: 2px solid #333;
-            border-radius: 5px;
-            transition: background-color 0.3s, color 0.3s;
-        }
-
-        button:hover {
-            background-color: #333;
-            color: #fff;
-        }
-
-        button img {
-            max-width: 20px;
-            max-height: 20px;
-            margin-right: 5px;
-        }
-
-        .product-image {
-            max-width: 200px; 
-            height: auto;
-            margin-left: 20px;
-            border: 2px solid #333; 
-            border-radius: 5px;
-        }
-
-        .footer {
-            margin-top: 30px;
-            text-align: center;
-        }
-
-        .footer-logo {
-            max-width: 50px; 
-            height: auto;
-        }
-
-        /* Media query para dispositivos más pequeños */
-        @media screen and (max-width: 768px) {
-            .nav-links {
-                flex-direction: column; /* Cambia la dirección de la flexbox a columna para dispositivos pequeños */
-                align-items: center; /* Centra los botones verticalmente */
-            }
-        }
-    </style>
 </head>
 <body>
     <div class="container">
-        <div>
-            <img src="Imagen1.png" alt="Yarotec Logo" class="logo">
-            <div class="user-info">
-                <p>Usuario Activo: <span id="activeUser">NombreUsuario</span></p>
-                <p>Fecha y Hora: <span id="dateTime">12 de diciembre, 2023 - 12:00 PM</span></p>
-                <p>Número de Productos en Seguimiento: <span id="numSeguimiento">10</span></p>
-                <p>Número de Productos en Promoción Vigentes: <span id="numPromocion">5</span></p>
-            </div>
-
-            <div class="alert-button">
-                <a href="alertas.html">
-                    <button style="background-color: #ffcc80;">Alerta de Productos</button>
-                </a>
-            </div>
-
-            <!-- Hipervínculos a otras páginas -->
-            <div class="nav-links">
-                <a href="consulta.html">
-                    <button style="background-color: #aed8e6;">Consulta <img src="consulta.png" alt="Consulta"></button>
-                </a>
-                <a href="edicion.html">
-                    <button style="background-color: #c1b3e1;">Edición <img src="edicion.png" alt="Edición"></button>
-                </a>
-                <a href="estadisticas.html">
-                    <button style="background-color: #ffcc80;">Estadísticas <img src="estadisticas.png" alt="Estadísticas"></button>
-                </a>
-            </div>
-        </div>
-
-        <!-- Imagen del producto con promoción más vigente -->
-        <div>
-            <img src="producto_promocion.png" alt="Producto con Promoción" class="product-image">
-        </div>
+        <img src="logo.png" alt="Logo de Yarotec" class="logo">
+        <div id="userInfo"></div>
+        <div id="productStats"></div>
+        <nav>
+            <ul>
+                <li><a href="consulta.html">Consulta de Productos</a></li>
+                <li><a href="adicion.html">Adición de Productos</a></li>
+                <li><a href="promocion.html">Productos en Promoción</a></li>
+            </ul>
+        </nav>
     </div>
-
-    <div class="footer">
-        <img src="Imagen1.png" alt="Yarotec Logo" class="footer-logo">
-        <p>Derechos Reservados &copy; <span id="currentYear"></span></p>
-    </div>
-
-    <script src="script.js"></script>
     <script>
-        // Mostrar el año actual en el pie de página
-        document.getElementById('currentYear').innerText = new Date().getFullYear();
+        // Cargar información del usuario activo
+        fetch('user_info.php')
+            .then(response => response.json())
+            .then(data => {
+                if (data.success) {
+                    document.getElementById('userInfo').innerHTML = `
+                        <h2>Bienvenido, ${data.nombre_usuario} ${data.apellido_usuario}</h2>
+                    `;
+                } else {
+                    document.getElementById('userInfo').innerHTML = `
+                        <p>Error: ${data.message}</p>
+                    `;
+                }
+            });
 
-        // Actualizar la fecha y hora cada segundo
-        function updateDateTime() {
-            const now = new Date();
-            const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric', hour: '2-digit', minute: '2-digit', second: '2-digit' };
-            const formattedDate = now.toLocaleDateString('es-ES', options);
-            document.getElementById('dateTime').innerText = formattedDate;
-        }
-
-        setInterval(updateDateTime, 1000);
-
-        // Obtener el nombre del usuario activo (este debería ser proporcionado por el servidor)
-        const userName = "NombreUsuario"; // Reemplazar con el nombre de usuario real
-        document.getElementById('activeUser').innerText = userName;
+        // Cargar estadísticas de productos
+        fetch('product_stats.php')
+            .then(response => response.json())
+            .then(data => {
+                if (data.success) {
+                    document.getElementById('productStats').innerHTML = `
+                        <p>Productos en seguimiento: ${data.seguimiento}</p>
+                        <p>Productos con alerta: ${data.alertas}</p>
+                    `;
+                } else {
+                    document.getElementById('productStats').innerHTML = `
+                        <p>Error: ${data.message}</p>
+                    `;
+                }
+            });
     </script>
 </body>
 </html>

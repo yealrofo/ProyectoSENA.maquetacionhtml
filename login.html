@@ -8,7 +8,7 @@
 </head>
 <body>
     <div class="container">
-        <img src="Imagen1.png" alt="Logo de Yarotec" class="logo">
+        <img src="Imagenes/Logo_vertical.png" alt="Logo de Yarotec" class="logo">
         <form id="loginForm">
             <h2>Ingresar a Yarotec</h2>
             <input type="text" id="usuario" placeholder="Nombre de usuario o correo" required>
@@ -19,6 +19,14 @@
             ¿No tienes una cuenta? <a href="register.html">Regístrate aquí</a>
         </div>
     </div>
+    <div class="footer">
+        <img src="Imagenes/logosolo.png" alt="Logo de Yarotec" class="footer-logo">
+        <p>Derechos Reservados &copy; <span id="currentYear"></span></p>
+    </div>
     <script src="login.js"></script>
+    <script>
+        // Mostrar el año actual en el pie de página
+        document.getElementById('currentYear').innerText = new Date().getFullYear();
+    </script>
 </body>
 </html>

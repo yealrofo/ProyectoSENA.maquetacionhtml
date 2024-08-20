@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Consulta de Productos - Yarotec</title>
+    <title>Productos en Promoción - Yarotec</title>
     <link rel="stylesheet" href="styles.css"> <!-- Enlaza los estilos CSS -->
 </head>
 <body>
@@ -13,10 +13,10 @@
         <img src="Imagen1.png" alt="Yarotec Logo" class="logo">
 
         <!-- Encabezado -->
-        <h2>Consulta de Productos</h2>
+        <h2>Productos en Promoción</h2>
 
-        <!-- Lista de categorías y productos -->
-        <div id="productosContainer">
+        <!-- Lista de productos en promoción -->
+        <div id="promocionesContainer">
             <!-- Aquí se insertará dinámicamente el contenido -->
         </div>
 
@@ -25,11 +25,11 @@
             <a href="index.html">
                 <button>Inicio</button>
             </a>
+            <a href="consulta.html">
+                <button>Consulta de Productos</button>
+            </a>
             <a href="adicion.html">
                 <button>Adición de Productos</button>
-            </a>
-            <a href="promociones.html">
-                <button>Productos en Promoción</button>
             </a>
         </div>
     </div>
@@ -41,7 +41,7 @@
     </div>
 
     <!-- Script para manipular el DOM y cargar datos -->
-    <script src="consulta.js"></script>
+    <script src="promociones.js"></script>
     <script>
         // Mostrar el año actual en el pie de página
         document.getElementById('currentYear').innerText = new Date().getFullYear();

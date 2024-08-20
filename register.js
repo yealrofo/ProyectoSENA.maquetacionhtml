@@ -1,6 +1,7 @@
-document.getElementById('registerForm').addEventListener('submit', async function(e) {
+document.getElementById('registerForm').addEventListener('submit', function(e) {
     e.preventDefault();
 
+    // Obtener los datos del formulario
     const data = {
         key: document.getElementById('key').value,
         nombre: document.getElementById('nombre').value,
@@ -11,24 +12,22 @@ document.getElementById('registerForm').addEventListener('submit', async functio
         password: document.getElementById('password').value,
     };
 
-    try {
-        const response = await fetch('register.php', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify(data)
-        });
-
-        const result = await response.json();
-
+    // Enviar los datos al servidor
+    fetch('register.php', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(data),
+    })
+    .then(response => response.json())
+    .then(result => {
         if (result.success) {
-            alert('Usuario registrado exitosamente');
-            document.getElementById('registerForm').reset();
+            alert(result.message || 'Registro exitoso');
+            window.location.href = 'login.html'; // Redirigir al login después del registro
         } else {
-            alert('Error: ' + result.message);
+            alert(result.message || 'Error en el registro');
         }
-    } catch (error) {
-        console.error('Error:', error);
-    }
+    })
+    .catch(error => console.error('Error:', error));
 });
