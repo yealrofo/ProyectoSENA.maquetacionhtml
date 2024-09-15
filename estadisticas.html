@@ -1,13 +1,16 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8"> 
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Yarotec - Estadísticas</title>
     <style>
         body {
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
-            background-color: #aed8e6; /* Azul Celeste */
+            background-color: #aed8e6; 
         }
 
         .nav-container {
@@ -27,6 +30,10 @@
 
         .category-section {
             margin-top: 30px;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
         }
 
         .category-title {
@@ -35,38 +42,32 @@
             margin-bottom: 10px;
         }
 
-        .product-container {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: space-around;
-            margin-bottom: 20px;
+        .product-list {
+            margin-top: 20px;
         }
 
         .product {
-            width: calc(30% - 20px); /* Utilizando calc para ajustar el ancho y agregar margen entre productos */
             margin-bottom: 20px;
             padding: 10px;
             border: 1px solid #ccc;
             border-radius: 5px;
             text-align: center;
-            background-color: #fff;
+            background-color: #f9f9f9;
         }
 
-        .product img {
-            max-width: 100%; /* Asegurando que las imágenes sean responsivas */
-            height: auto;
-            margin-bottom: 10px;
+        .warning {
+            color: red;
+            font-size: 18px;
         }
 
         .nav-buttons {
             display: flex;
-            justify-content: center; /* Centra los botones de navegación */
-            flex-wrap: wrap; /* Permite que los elementos se envuelvan en pantallas pequeñas */
+            justify-content: space-around;
             margin-top: 20px;
             border: 2px solid #333;
             border-radius: 5px;
             padding: 10px;
-            background-color: #aed8e6;
+            background-color: #aed8e6; 
         }
 
         .nav-buttons a {
@@ -76,7 +77,6 @@
             padding: 5px 15px;
             border-radius: 5px;
             margin: 5px; /* Espacio entre los botones */
-            display: block; /* Hace que los botones se muestren en línea verticalmente */
         }
 
         .nav-buttons a:hover {
@@ -84,69 +84,66 @@
             color: #fff;
         }
 
+        /* Media query para dispositivos más pequeños */
         @media screen and (max-width: 768px) {
-            .product {
-                width: calc(50% - 20px); /* En pantallas más pequeñas, muestra dos productos por fila */
-            }
-        }
-
-        @media screen and (max-width: 480px) {
-            .product {
-                width: calc(100% - 20px); /* En pantallas aún más pequeñas, muestra un producto por fila */
-            }
-
             .nav-buttons {
-                flex-direction: column; /* Cambia la dirección de la flexbox a columna para pantallas pequeñas */
+                flex-direction: column; /* Cambia la dirección de la flexbox a columna para dispositivos pequeños */
                 align-items: center; /* Centra los botones verticalmente */
             }
         }
     </style>
 </head>
 <body>
-
+   
     <!-- Botones de navegación -->
     <div class="nav-buttons">
         <a href="index.html">Inicio</a>
+        <a href="alertas.html">Alertas</a>
         <a href="consulta.html">Consulta</a>
         <a href="edicion.html">Edición</a>
-        <a href="estadisticas.html">Estadísticas</a>
     </div>
 
     <div class="category-section">
         <div class="category-title">Procesadores</div>
-        <div class="product-container">
+        <div class="product-list">
             <!-- Producto 1 -->
             <div class="product">
-                <img src="procesador1.jpg" alt="Procesador 1">
-                <p>Precio: $200</p>
-                <p>Descuento: 10%</p>
+                <p>Nombre: Procesador 1</p>
+                <p>Precio de Seguimiento: $200</p>
+                <p>Precio Más Bajo: $180</p>
+                <p>Precio Más Alto: $220</p>
+                <p>Precio Actual: $200</p>
+                <!-- Coloca en rojo con símbolo de advertencia si el precio actual es menor o igual que el valor objetivo -->
+                <p class="warning">&#9888; Precio de Alerta Alcanzado</p>
             </div>
             <!-- Producto 2 -->
             <div class="product">
-                <img src="procesador2.jpg" alt="Procesador 2">
-                <p>Precio: $250</p>
-                <p>Descuento: 15%</p>
+                <p>Nombre: Procesador 2</p>
+                <p>Precio de Seguimiento: $180</p>
+                <p>Precio Más Bajo: $160</p>
+                <p>Precio Más Alto: $200</p>
+                <p>Precio Actual: $190</p>
+                <!-- Deja en negro si el precio actual es mayor que el valor objetivo -->
+                <p class="warning"></p>
             </div>
         </div>
     </div>
 
     <div class="category-section">
         <div class="category-title">Memorias</div>
-        <div class="product-container">
+        <div class="product-list">
             <!-- Producto 1 -->
             <div class="product">
-                <img src="memoria1.jpg" alt="Memoria 1">
-                <p>Precio: $80</p>
-                <p>Descuento: 12%</p>
+                <p>Nombre: Memoria 1</p>
+                <p>Precio de Seguimiento: $80</p>
+                <p>Precio Más Bajo: $70</p>
+                <p>Precio Más Alto: $90</p>
+                <p>Precio Actual: $85</p>
+                <!-- Coloca en rojo con símbolo de advertencia si el precio actual es menor o igual que el valor objetivo -->
+                <p class="warning">&#9888; Precio de Alerta Alcanzado</p>
             </div>
             <!-- Producto 2 -->
             <div class="product">
-                <img src="memoria2.jpg" alt="Memoria 2">
-                <p>Precio: $120</p>
-                <p>Descuento: 18%</p>
-            </div>
-        </div>
-    </div>
-
-</body>
-</html>
+                <p>Nombre: Memoria 2</p>
+                <p>Precio de Seguimiento: $70</p>
+           

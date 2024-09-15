@@ -3,7 +3,7 @@
 // Función para obtener información del usuario y productos
 function obtenerInformacion() {
     // Realizar una solicitud al servidor para obtener los datos
-    fetch('get_info.php')
+    fetch('../Includes/get_info.php')
         .then(response => response.json())
         .then(data => {
             // Actualizar el nombre del usuario activo

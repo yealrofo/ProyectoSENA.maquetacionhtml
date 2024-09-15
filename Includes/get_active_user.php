@@ -7,4 +7,5 @@ if (isset($_SESSION['usuario'])) {
 } else {
     echo json_encode(['usuario' => null]);
 }
+include 'config.php';
 ?>
